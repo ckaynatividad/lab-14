@@ -17,3 +17,4 @@ export function getUser(){
     //const user = parse.name.toUpperCase();
     return parse;
 }
+
