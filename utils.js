@@ -6,6 +6,6 @@ export function generateUser(formData) {
 }
 
 export function setUser(userObject) {
-    
+
     localStorage.setItem('USER', JSON.stringify(userObject));
 }
