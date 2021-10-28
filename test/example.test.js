@@ -14,7 +14,7 @@ test('generateUser function return a userObject', (expect) => {
     };
     const formData = new FormData();
 
-    formData.set('userName', 'miklo');
+    formData.set('username', 'miklo');
     formData.set('password', '12345');
     //Act 
     // Call the function you're testing and set the result to a const

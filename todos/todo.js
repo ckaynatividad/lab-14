@@ -1,5 +1,5 @@
 import { toDo } from './render.js';
-import { setUser, generateUser, getUser } from '../utils.js';
+import { getUser } from '../utils.js';
 
 function loadUser(){
     //const toDo 
@@ -24,9 +24,8 @@ export function renderToDo(listItem){
     console.log(liItem);
     
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = 'Completed?';
-    completeBtn.classList.add('finished');
-    
+    completeBtn.textContent = 'Completed';
+    completeBtn.classList.add('completeBtn');
     listItems.append(liItem, completeBtn);
 
     return listItems;
@@ -38,3 +37,12 @@ for (let item of toDo.todos){
 
     todoList.append(listItems);
 }
+
+const completeBtn = document.querySelector('completeBtn');
+const liItem = document.getElementById('li');
+
+completeBtn.addEventListener('submit', ()=>{
+    console.log(completeBtn);
+    liItem.classList.add('finished');
+
+});
