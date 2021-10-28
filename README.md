@@ -1,5 +1,9 @@
 # Group Project README
 
+## MIRO BOARD
+
+https://miro.com/app/board/o9J_lnWEVO4=/?invite_link_id=114310015199
+
 ## Login
 
 ### HTML Elements
@@ -38,5 +42,4 @@
 * Button 'add' new to-do 
 * On click page reload
 * append to unfinished to-do list
-
 
