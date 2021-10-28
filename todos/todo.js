@@ -9,8 +9,6 @@ function loadUser(){
     const userName = document.getElementById('username');
     userName.textContent = user.userName;
     
-    const passWord = document.getElementById('password');
-    passWord.textContent = user.password;
 }
 
 loadUser();
@@ -28,21 +26,20 @@ export function renderToDo(listItem){
     completeBtn.classList.add('completeBtn');
     listItems.append(liItem, completeBtn);
 
+    completeBtn.addEventListener('click', ()=>{
+        console.log(completeBtn);
+    
+        liItem.classList.add('finished');
+    
+    });
     return listItems;
-} 
+}
 renderToDo(toDo.todos[0]);
-
+    
 for (let item of toDo.todos){
     const listItems = renderToDo(item);
-
+        
     todoList.append(listItems);
 }
 
-const completeBtn = document.querySelector('completeBtn');
-const liItem = document.getElementById('li');
 
-completeBtn.addEventListener('submit', ()=>{
-    console.log(completeBtn);
-    liItem.classList.add('finished');
-
-});
