@@ -1,6 +1,7 @@
 export function generateUser(formData) {
+    console.log(formData.get('username'));
     return {
-        userName: formData.get('userName'),
+        userName: formData.get('username'),
         password: formData.get('password')
     };
 }

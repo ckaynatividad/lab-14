@@ -2,34 +2,39 @@ import { toDo } from './render.js';
 import { setUser, generateUser, getUser } from '../utils.js';
 
 function loadUser(){
-    
     //const toDo 
     // getUser from localStorage
     const user = getUser();
     // Update DOM with user info 
     const userName = document.getElementById('username');
+    userName.textContent = user.userName;
+    
     const passWord = document.getElementById('password');
+    passWord.textContent = user.password;
 }
 
+loadUser();
+
+const todoList = document.getElementById('todo-list');
 export function renderToDo(listItem){
     const listItems = document.createElement('div');
-
+    
     const liItem = document.createElement('li');
-    listItem.textContent = toDo.todos;
-
-   
+    liItem.textContent = listItem.todo;
+    console.log(liItem);
+    
     const completeBtn = document.createElement('button');
     completeBtn.textContent = 'Completed?';
     completeBtn.classList.add('finished');
+    
+    listItems.append(liItem, completeBtn);
 
-    renderToDo.append(listItems, liItem, completeBtn);
-    return renderToDo;
+    return listItems;
 } 
-console.log(toDo.todos[0]);
+renderToDo(toDo.todos[0]);
 
-const todoList = document.getElementById('todo-list');
+for (let item of toDo.todos){
+    const listItems = renderToDo(item);
 
-// for (let item of ){
-//     const listItems = renderToDo(item);
-//     todoList.append(listItems);
-// }
+    todoList.append(listItems);
+}
